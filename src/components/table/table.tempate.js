@@ -19,8 +19,8 @@ function toColumn(col) {
 function createRow(index, content) {
   return `
     <div class="row">
-      <div class="row-info">${index ? index : ''}</div> 
-      <div class="row-data">${content}</div> 
+      <div class="row-info">${index ? index : ''}</div>
+      <div class="row-data">${content}</div>
     </div>
   `
 }
