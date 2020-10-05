@@ -1,12 +1,14 @@
 import {ExcelComponent} from '@core/ExcelComponent'
 import {createTable} from './table.tempate'
+import {resizeHandler} from '@/components/table/table.resize'
+import {shouldResize} from '@/components/table/table.functions'
 
 export class Table extends ExcelComponent {
   static className = 'excel__table'
 
   constructor($root) {
     super($root, {
-      listeners: ['click', 'mousedown']
+      listeners: ['mousedown']
     })
   }
 
@@ -14,11 +16,9 @@ export class Table extends ExcelComponent {
     return createTable(20)
   }
 
-  onClick() {
-    console.log('Click')
-  }
-
-  onMousedown() {
-    console.log('MouseDown')
+  onMousedown(event) {
+    if (shouldResize(event)) {
+      resizeHandler(this.$root, event)
+    }
   }
 }
