@@ -34,7 +34,7 @@ class Dom {
   }
 
   off(eventType, callback) {
-    this.$el.removeEventListenter(eventType, callback)
+    this.$el.removeEventListener(eventType, callback)
   }
 
   find(selector) {
@@ -119,8 +119,8 @@ export function $(selector) {
   return new Dom(selector)
 }
 
-$.create = (tagname, classes = '') => {
-  const el = document.createElement(tagname)
+$.create = (tagName, classes = '') => {
+  const el = document.createElement(tagName)
   if (classes) {
     el.classList.add(classes)
   }
