@@ -15,7 +15,8 @@ export class DomListener {
       if (!this[method]) {
         const name = this.name || ''
         throw new Error(
-            `Method ${method} is not implemeted in ${name} Component`)
+          `Method ${method} is not implemeted in ${name} Component`
+        )
       }
       this[method] = this[method].bind(this)
       this.$root.on(listener, this[method])
